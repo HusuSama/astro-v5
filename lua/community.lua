@@ -33,6 +33,7 @@ return {
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.completion.avante-nvim" },
+  { import = "astrocommunity.completion.blink-cmp-git" },
 
   -- motion
   { import = "astrocommunity.motion.flash-nvim" },
