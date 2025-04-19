@@ -10,6 +10,7 @@ return {
   "saghen/blink.cmp",
   dependencies = {
     "onsails/lspkind.nvim",
+    "xzbdmw/colorful-menu.nvim",
   },
   opts = function(_, opts)
     opts.keymap = {
@@ -30,6 +31,10 @@ return {
                   })
                 end,
               },
+              label = {
+                text = function(ctx) return require("colorful-menu").blink_components_text(ctx) end,
+                highlight = function(ctx) return require("colorful-menu").blink_components_highlight(ctx) end,
+              },
             },
             columns = {
               {
@@ -37,7 +42,7 @@ return {
               },
               {
                 "label",
-                "label_description",
+                -- "label_description",
                 "kind",
                 gap = 5,
               },

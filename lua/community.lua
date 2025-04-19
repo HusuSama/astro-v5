@@ -9,6 +9,9 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
 
+  -- themes
+  { import = "astrocommunity.colorscheme.everforest" },
+
   -- languages
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.vue" },
