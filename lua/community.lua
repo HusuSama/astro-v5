@@ -12,6 +12,10 @@ return {
   -- themes
   { import = "astrocommunity.colorscheme.everforest" },
 
+  -- git
+  { import = "astrocommunity.git.blame-nvim" },
+  -- { import = "astrocommunity.git.git-blame-nvim" },
+
   -- languages
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.vue" },
@@ -26,6 +30,8 @@ return {
 
   -- lsp extension
   { import = "astrocommunity.lsp.lspsaga-nvim" },
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   -- editing support
   { import = "astrocommunity.editing-support.multicursors-nvim" },

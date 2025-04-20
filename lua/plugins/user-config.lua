@@ -1,5 +1,5 @@
 ---@return table
-function keywords(...)
+local function keywords(...)
   local keys = vim.opt.iskeyword:get()
   for _, v in ipairs { ... } do
     table.insert(keys, v)
@@ -21,7 +21,8 @@ return {
       notifications = true, -- enable notifications at start
     },
     diagnostics = {
-      virtual_text = true,
+      -- 使用 tiny-inline-diagnostic-nvim 插件进行显示，此处隐藏原始内容
+      virtual_text = false,
       underline = true,
     },
     -- vim options can be configured here
@@ -44,7 +45,6 @@ return {
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         mapleader = " ", -- sets vim.g.mapleader
         -- maplocalleader = " ",
@@ -65,7 +65,6 @@ return {
       },
     },
     -- Mappings can be configured through AstroCore as well.
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
         -- second key is the lefthand side of the map
