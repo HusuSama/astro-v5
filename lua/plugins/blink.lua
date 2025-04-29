@@ -6,6 +6,7 @@ local order = {
   buffer = 2,
   lazydev = 1,
 }
+
 return {
   "saghen/blink.cmp",
   dependencies = {
@@ -16,7 +17,24 @@ return {
     opts.keymap = {
       preset = "super-tab",
     }
+    opts.sources.default = { "lsp", "snippets", "git", "path", "lazydev" }
     return require("astrocore").extend_tbl(opts, {
+      sources = {
+        providers = {
+          lsp = {
+            transform_items = function(_, items)
+              return vim.tbl_filter(function(item)
+                if
+                  (item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet)
+                  and (item.kind ~= require("blink.cmp.types").CompletionItemKind.Text)
+                then
+                  return item
+                end
+              end, items)
+            end,
+          },
+        },
+      },
       completion = {
         list = {
           selection = { preselect = true, auto_insert = false },
@@ -72,7 +90,7 @@ return {
           "sort_text",
         },
       },
-      signature = { enabled = true },
+      -- signature = { enabled = true },
     })
   end,
 }
