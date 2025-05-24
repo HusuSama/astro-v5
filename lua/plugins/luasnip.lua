@@ -19,18 +19,18 @@ return {
         desc = "luasnip expand or jump",
       },
       -- 针对 select 模式，输入模式在 polish 中动态设置
-      {
-        "<Tab>",
-        mode = { "s" },
-        [[<cmd>lua require("luasnip").jump(1)<cr>]],
-        desc = "luasnip jump next",
-      },
-      {
-        "<S-Tab>",
-        mode = { "s" },
-        [[<cmd>lua require("luasnip").jump(-1)<cr>]],
-        desc = "luasnip jump prev",
-      },
+      -- {
+      --   "<Tab>",
+      --   mode = { "s" },
+      --   [[<cmd>lua require("luasnip").jump(1)<cr>]],
+      --   desc = "luasnip jump next",
+      -- },
+      -- {
+      --   "<S-Tab>",
+      --   mode = { "s" },
+      --   [[<cmd>lua require("luasnip").jump(-1)<cr>]],
+      --   desc = "luasnip jump prev",
+      -- },
     },
   },
 }

@@ -34,7 +34,7 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   -- editing support
-  { import = "astrocommunity.editing-support.multicursors-nvim" },
+  -- { import = "astrocommunity.editing-support.multicursors-nvim" },
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
