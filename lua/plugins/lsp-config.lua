@@ -9,22 +9,31 @@ local function get_git_root()
 end
 
 return {
-  "AstroNvim/astrolsp",
-  ---@type AstroLSPOpts
-  ---@diagnostic disable:missing-fields
-  opts = {
-    config = {
-      vtsls = {
-        root_dir = function()
-          local root_path = get_git_root()
-          if root_path ~= nil then return root_path end
-        end,
-        settings = {
-          vtsls = {
-            autoUseWorkspaceTsdk = true,
+  {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    ---@diagnostic disable:missing-fields
+    opts = {
+      config = {
+        vtsls = {
+          root_dir = function()
+            local root_path = get_git_root()
+            if root_path ~= nil then return root_path end
+          end,
+          settings = {
+            vtsls = {
+              autoUseWorkspaceTsdk = true,
+            },
           },
         },
+        emmet_ls = { filetypes = "html" },
       },
     },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = vim.tbl_filter(function(s) return s ~= "emmet_ls" end, opts.ensure_installed)
+    end,
   },
 }

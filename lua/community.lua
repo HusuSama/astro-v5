@@ -43,6 +43,12 @@ return {
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.completion.blink-cmp-git" },
+  { import = "astrocommunity.completion.nvim-cmp" },
+  { import = "astrocommunity.completion.cmp-nvim-lua" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.completion.cmp-emoji" },
+  { import = "astrocommunity.completion.cmp-calc" },
+  { import = "astrocommunity.completion.cmp-git" },
 
   -- motion
   { import = "astrocommunity.motion.flash-nvim" },
