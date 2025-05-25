@@ -9,7 +9,7 @@ local order = {
 
 return {
   "saghen/blink.cmp",
-  -- enabled = false,
+  enabled = false,
   dependencies = {
     "onsails/lspkind.nvim",
     "xzbdmw/colorful-menu.nvim",

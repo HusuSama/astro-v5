@@ -27,13 +27,14 @@ return {
           },
         },
         emmet_ls = { filetypes = "html" },
+        prettierd = { filetypes = "html" },
       },
     },
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = vim.tbl_filter(function(s) return s ~= "emmet_ls" end, opts.ensure_installed)
+      opts.ensure_installed = vim.tbl_filter(function(s) return s ~= "prettierd" end, opts.ensure_installed)
     end,
   },
 }
