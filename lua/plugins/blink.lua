@@ -1,25 +1,37 @@
 local order = {
-  lsp = 6,
-  snippets = 5,
-  git = 4,
-  path = 3,
+  lsp = 7,
+  dadbod = 6,
+  path = 5,
+  snippets = 4,
+  git = 3,
   buffer = 2,
   lazydev = 1,
 }
 
 return {
   "saghen/blink.cmp",
-  enabled = false,
+  -- enabled = false,
   dependencies = {
     "onsails/lspkind.nvim",
     "xzbdmw/colorful-menu.nvim",
+    "L3MON4D3/LuaSnip",
   },
   opts = function(_, opts)
+    ---@type blink.cmp.KeymapConfig
     opts.keymap = {
       preset = "super-tab",
     }
-    opts.sources.default = { "lsp", "snippets", "git", "path", "lazydev" }
+    -- require("astrocore").list_insert_unique(opts.sources.default, { "dadbod" })
+    opts.sources.default = { "lsp", "path", "dadbod", "snippets", "lazydev" }
     return require("astrocore").extend_tbl(opts, {
+      sources = {
+        per_filetype = { sql = { "dadbod" } },
+        providers = {
+          dadbod = { module = "vim_dadbod_completion.blink" },
+        },
+      },
+      ---@type blink.cmp.CompletionConfig
+      ---@diagnostic disable:missing-fields
       completion = {
         list = {
           selection = { preselect = true, auto_insert = false },
@@ -52,6 +64,20 @@ return {
             },
           },
         },
+      },
+      ---@type blink.cmp.SnippetsConfig
+      snippets = {
+        -- preset = "luasnip",
+        active = function(filter)
+          local snippet = require "luasnip"
+          local blink = require "blink.cmp"
+          if snippet.in_snippet() and not blink.is_visible() then
+            return true
+          else
+            if not snippet.in_snippet() and vim.fn.mode() == "n" then snippet.unlink_current() end
+            return false
+          end
+        end,
       },
       cmdline = {
         enabled = true,
