@@ -56,7 +56,8 @@ return {
           ["@module"] = { fg = colors.yellow },
           ["@parameter"] = { fg = colors.text },
           ["@type.builtin"] = { fg = colors.peach },
-          -- ["@function.builtin"] = { fg = "#6d95ee" },
+          -- ["@function.builtin"] = { fg = "#FFD230" },
+          ["@function.builtin"] = { fg = colors.blue, style = { "bold" } },
         },
       })
     end,
