@@ -12,6 +12,7 @@ return {
   -- themes
   { import = "astrocommunity.colorscheme.everforest" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
 
   -- git
   { import = "astrocommunity.git.blame-nvim" },

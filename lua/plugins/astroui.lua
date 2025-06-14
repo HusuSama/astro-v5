@@ -14,7 +14,8 @@ return {
       -- change colorscheme
       -- colorscheme = "astrodark",
       -- colorscheme = "everforest",
-      colorscheme = "catppuccin-frappe",
+      -- colorscheme = "catppuccin-frappe",
+      colorscheme = "onedark_vivid",
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
@@ -48,6 +49,18 @@ return {
         styles = {
           conditional = { "bold" },
           keywords = { "bold" },
+        },
+      })
+    end,
+  },
+  {
+    "olimorris/onedarkpro.nvim",
+    opts = function(_, opts)
+      return require("astrocore").extend_tbl(opts, {
+        styles = {
+          keywords = "bold",
+          conditionals = "bold",
+          comments = "italic",
         },
       })
     end,
