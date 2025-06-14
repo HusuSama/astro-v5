@@ -14,8 +14,9 @@ return {
       -- change colorscheme
       -- colorscheme = "astrodark",
       -- colorscheme = "everforest",
-      -- colorscheme = "catppuccin-frappe",
-      colorscheme = "onedark_vivid",
+      colorscheme = "catppuccin-frappe",
+      -- colorscheme = "onedark_vivid",
+      -- colorscheme = "onedark",
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
@@ -44,11 +45,18 @@ return {
   {
     "catppuccin/nvim",
     opts = function(_, opts)
+      local colors = require("catppuccin.palettes").get_palette "frappe"
       return require("astrocore").extend_tbl(opts, {
         no_italic = true,
         styles = {
           conditional = { "bold" },
           keywords = { "bold" },
+        },
+        custom_highlights = {
+          ["@module"] = { fg = colors.yellow },
+          ["@parameter"] = { fg = colors.text },
+          ["@type.builtin"] = { fg = colors.peach },
+          -- ["@function.builtin"] = { fg = "#6d95ee" },
         },
       })
     end,
