@@ -53,11 +53,12 @@ return {
           keywords = { "bold" },
         },
         custom_highlights = {
-          ["@module"] = { fg = colors.yellow },
+          ["@module"] = { fg = colors.teal },
           ["@parameter"] = { fg = colors.text },
-          ["@type.builtin"] = { fg = colors.peach },
-          -- ["@function.builtin"] = { fg = "#FFD230" },
-          ["@function.builtin"] = { fg = colors.blue, style = { "bold" } },
+          ["@type.builtin"] = { fg = colors.yellow },
+          Type = { fg = colors.yellow },
+          ["@function.builtin"] = { fg = colors.peach, style = { "bold" } },
+          -- ["@variable"] = { fg = "#DBEAFE" },
         },
       })
     end,
