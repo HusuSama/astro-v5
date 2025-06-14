@@ -25,6 +25,9 @@ return {
           disable_tools = fields_table.disable_tools,
         },
       },
+      windows = {
+        width = 40,
+      },
     })
   end,
 }

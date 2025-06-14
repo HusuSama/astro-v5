@@ -35,6 +35,7 @@ return {
   -- editor helper
   { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.completion.blink-cmp-git" },
+  { import = "astrocommunity.completion.blink-cmp-emoji" },
   { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
