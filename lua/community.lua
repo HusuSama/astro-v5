@@ -42,6 +42,8 @@ return {
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
+  -- { import = "astrocommunity.editing-support.multicursors-nvim" },
+  { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   -- { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
