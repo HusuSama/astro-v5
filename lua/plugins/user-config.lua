@@ -20,11 +20,11 @@ return {
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
-    diagnostics = {
-      -- 使用 tiny-inline-diagnostic-nvim 插件进行显示，此处隐藏原始内容
-      virtual_text = false,
-      underline = true,
-    },
+    -- diagnostics = {
+    --   -- 使用 tiny-inline-diagnostic-nvim 插件进行显示，此处隐藏原始内容
+    --   virtual_text = false,
+    --   underline = true,
+    -- },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
@@ -33,12 +33,12 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
-        tabstop = 4,
-        shiftwidth = 4,
+        -- tabstop = 4,
+        -- shiftwidth = 4,
         clipboard = "unnamedplus",
         linespace = 10,
         ignorecase = true,
-        autoindent = true,
+        -- autoindent = true,
         iskeyword = keywords "-",
         -- undofile = true,
         -- undodir = "./"
@@ -50,7 +50,7 @@ return {
         -- maplocalleader = " ",
         autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
         cmp_enabled = true, -- enable completion at start
-        autopairs_enabled = true, -- enable autopairs at start
+        -- autopairs_enabled = true, -- enable autopairs at start
         diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
         icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements

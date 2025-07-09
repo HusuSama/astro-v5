@@ -48,6 +48,9 @@ return {
   -- { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.programming-language-support.kulala-nvim" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.indent.snacks-indent-hlchunk" },
+
   -- { import = "astrocommunity.completion.nvim-cmp" },
   -- { import = "astrocommunity.completion.cmp-nvim-lua" },
   -- { import = "astrocommunity.completion.cmp-cmdline" },
