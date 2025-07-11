@@ -1,16 +1,21 @@
 return {
   "folke/snacks.nvim",
-  opts = function(_, opts)
-    require("astrocore").extend_tbl(opts, {
-      animate = {
+  opts = {
+    indent = {
+      enabled = true,
+      chunk = {
         enabled = true,
-        style = "out",
-        easing = "linear",
-        duration = {
-          step = 20, -- ms per step
-          total = 500, -- maximum duration
+        char = {
+          corner_top = "╭",
+          corner_bottom = "╰",
+          horizontal = "─",
+          vertical = "│",
+          arrow = ">",
         },
       },
-    })
-  end,
+      animate = {
+        enabled = true,
+      },
+    },
+  },
 }
