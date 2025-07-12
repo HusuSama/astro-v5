@@ -14,6 +14,10 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
 
+  -- debugging
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" },
+
   -- git
   { import = "astrocommunity.git.blame-nvim" },
 
