@@ -37,4 +37,11 @@ return {
       opts.ensure_installed = vim.tbl_filter(function(s) return s ~= "prettierd" end, opts.ensure_installed)
     end,
   },
+  {
+    "AstroNvim/astrocore",
+    opts = function(_, opts)
+      local maps = opts.mappings
+      maps.n["<Leader>Rl"] = { "<cmd>LspRestart<cr>", desc = "重启LSP服务" }
+    end,
+  },
 }

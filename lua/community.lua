@@ -21,6 +21,9 @@ return {
   -- git
   { import = "astrocommunity.git.blame-nvim" },
 
+  -- markdown/docs
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+
   -- lsp
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.java" },
@@ -33,7 +36,7 @@ return {
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.thrift" },
-  { import = "astrocommunity.lsp.lspsaga-nvim" },
+  -- { import = "astrocommunity.lsp.lspsaga-nvim" },
   -- { import = "astrocommunity.lsp.garbage-day-nvim" },
 
   -- editor helper
@@ -47,7 +50,7 @@ return {
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   -- { import = "astrocommunity.editing-support.multicursors-nvim" },
-  { import = "astrocommunity.editing-support.vim-visual-multi" },
+  -- { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   -- { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
