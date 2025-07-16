@@ -24,9 +24,26 @@ return {
           model = "deepseek-coder",
           disable_tools = fields_table.disable_tools,
         },
+        deepseek_chat = {
+          __inherited_from = "openai",
+          api_key_name = "DEEPSEEK_API_KEY",
+          endpoint = "https://api.deepseek.com",
+          model = "deepseek-chat",
+          disable_tools = fields_table.disable_tools,
+        },
+        deepseek_r1 = {
+          __inherited_from = "openai",
+          api_key_name = "DEEPSEEK_API_KEY",
+          endpoint = "https://api.deepseek.com",
+          model = "deepseek-reasoner",
+          disable_tools = fields_table.disable_tools,
+        },
       },
       windows = {
         width = 40,
+        ask = {
+          floating = true,
+        },
       },
     })
   end,
