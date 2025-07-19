@@ -39,9 +39,14 @@ return {
           }
         end
       end
+      -- if opts.mappings.n["<Leader>lS"] then
+      --   opts.mappings.n["<Leader>lS"][1] = function()
+      --     require("snacks.picker").lsp_symbols { auto_close = true, finder = true, layout = { preset = "telescope" } }
+      --   end
+      -- end
       if opts.mappings.n["<Leader>lG"] then
         opts.mappings.n["<Leader>lG"][1] = function()
-          require("snacks.picker").lsp_workspace_symbols { layout = { preset = "telescope" } }
+          require("snacks.picker").lsp_workspace_symbols { auto_close = true, layout = { preset = "telescope" } }
         end
       end
     end,
