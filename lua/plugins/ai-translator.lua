@@ -1,0 +1,64 @@
+return {
+  -- {
+  --   dir = "C:\\Users\\admin\\AppData\\Local\\ai-translator",
+  --   name = "ai-translator",
+  --   config = function()
+  --     require("ai-translator").setup {
+  --       choices = { "English", "Other" },
+  --       model = {
+  --         api_key = "sk-a4152d69792e4af9ac384c963b5c05b8",
+  --       },
+  --     }
+  --     vim.keymap.set({ "n", "v" }, "<leader>Tw", require("ai-translator").trans_word, { noremap = true })
+  --     vim.keymap.set(
+  --       { "n", "v" },
+  --       "<leader>TW",
+  --       require("ai-translator").trans_select_other_language,
+  --       { noremap = true }
+  --     )
+  --     vim.keymap.set({ "n", "v" }, "<leader>Td", require("ai-translator").trans_line_diagnoctis, { noremap = true })
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     {
+  --       "MeanderingProgrammer/render-markdown.nvim",
+  --       opts = {
+  --         file_types = { "markdown", "AITranslator" },
+  --       },
+  --       ft = { "markdown", "AITranslator" },
+  --     },
+  --   },
+  --   dev = {
+  --     path = "C:\\Users\\admin\\AppData\\Local\\ai-translator",
+  --     fallback = false,
+  --   },
+  -- },
+  -- {
+  --   "HusuSama/ai-translator",
+  --   config = function ()
+  --     require("ai-translator").trans()
+  --   end
+  -- }
+  -- {
+  --   "HusuSama/ai-translator",
+  --   config = function()
+  --     vim.keymap.set(
+  --       { "n", "v" },
+  --       "<leader>Tw",
+  --       require("ai-translator").trans,
+  --       { noremap = true, desc = "AI Translator: Translate" }
+  --     )
+  --     require("ai-translator").setup {
+  --       model = {
+  --         api_key = "sk-a4152d69792e4af9ac384c963b5c05b8",
+  --       },
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     "MeanderingProgrammer/render-markdown.nvim",
+  --   },
+  -- },
+}

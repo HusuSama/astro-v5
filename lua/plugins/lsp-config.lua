@@ -28,6 +28,13 @@ return {
         },
         emmet_ls = { filetypes = "html" },
         prettierd = { filetypes = "html" },
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              classFunctions = { "tw", "clsx", "tw\\.[a-z-]+" },
+            },
+          },
+        },
       },
     },
   },

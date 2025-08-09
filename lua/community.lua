@@ -50,6 +50,7 @@ return {
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.programming-language-support.kulala-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.editing-support.mcphub-nvim" },
