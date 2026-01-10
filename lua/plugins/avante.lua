@@ -16,28 +16,37 @@ return {
     return require("astrocore").extend_tbl(opts, {
       -- windows 使用其他形式，并且不使用工具
       -- mode = fields_table.mode,
-      provider = "deepseek",
+      -- provider = "deepseek",
+      -- providers = {
+      --   deepseek = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "DEEPSEEK_API_KEY",
+      --     endpoint = "https://api.deepseek.com",
+      --     model = "deepseek-coder",
+      --     -- disable_tools = fields_table.disable_tools,
+      --   },
+      --   deepseek_chat = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "DEEPSEEK_API_KEY",
+      --     endpoint = "https://api.deepseek.com",
+      --     model = "deepseek-chat",
+      --     -- disable_tools = fields_table.disable_tools,
+      --   },
+      --   deepseek_r1 = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "DEEPSEEK_API_KEY",
+      --     endpoint = "https://api.deepseek.com",
+      --     model = "deepseek-reasoner",
+      --     -- disable_tools = fields_table.disable_tools,
+      --   },
+      -- },
+      provider = "qianwen",
       providers = {
-        deepseek = {
+        qianwen = {
           __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-coder",
-          -- disable_tools = fields_table.disable_tools,
-        },
-        deepseek_chat = {
-          __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-chat",
-          -- disable_tools = fields_table.disable_tools,
-        },
-        deepseek_r1 = {
-          __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-reasoner",
-          -- disable_tools = fields_table.disable_tools,
+          api_key_name = "DASHSCOPE_API_KEY",
+          endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          model = "qwen3-coder-plus",
         },
       },
       windows = {
