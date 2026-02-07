@@ -1,88 +1,134 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
+---@return table
+local function keywords(...)
+  local keys = vim.opt.iskeyword:get()
+  for _, v in ipairs { ... } do
+    table.insert(keys, v)
+  end
+  return keys
+end
+
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
-
-  -- == Examples of Overriding Plugins ==
-
   -- customize dashboard options
   {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
         preset = {
+          -- header = table.concat({
+          --   " █████  ███████ ████████ ██████   ██████ ",
+          --   "██   ██ ██         ██    ██   ██ ██    ██",
+          --   "███████ ███████    ██    ██████  ██    ██",
+          --   "██   ██      ██    ██    ██   ██ ██    ██",
+          --   "██   ██ ███████    ██    ██   ██  ██████ ",
+          --   "",
+          --   "███    ██ ██    ██ ██ ███    ███",
+          --   "████   ██ ██    ██ ██ ████  ████",
+          --   "██ ██  ██ ██    ██ ██ ██ ████ ██",
+          --   "██  ██ ██  ██  ██  ██ ██  ██  ██",
+          --   "██   ████   ████   ██ ██      ██",
+          -- }, "\n"),
           header = table.concat({
-            " █████  ███████ ████████ ██████   ██████ ",
-            "██   ██ ██         ██    ██   ██ ██    ██",
-            "███████ ███████    ██    ██████  ██    ██",
-            "██   ██      ██    ██    ██   ██ ██    ██",
-            "██   ██ ███████    ██    ██   ██  ██████ ",
-            "",
-            "███    ██ ██    ██ ██ ███    ███",
-            "████   ██ ██    ██ ██ ████  ████",
-            "██ ██  ██ ██    ██ ██ ██ ████ ██",
-            "██  ██ ██  ██  ██  ██ ██  ██  ██",
-            "██   ████   ████   ██ ██      ██",
+            " ,--.-,,-,--,   _,.---._       _,.---._      ,-,--.               ",
+            "/==/  /|=|  | ,-.' , -  `.   ,-.' , -  `.  ,-.'-  _\\ .--.-. .-.-. ",
+            "|==|_ ||=|, |/==/_,  ,  - \\ /==/_,  ,  - \\/==/_ ,_.'/.==/ -|/=/  | ",
+            "|==| ,|/=| _|==|   .=.     |==|   .=.     \\==\\  \\   |==| ,||=| -| ",
+            "|==|- `-' _ |==|_ : ;=:  - |==|_ : ;=:  - |\\==\\ -\\  |==|- | =/  | ",
+            "|==|  _     |==| , '='     |==| , '='     |_\\==\\ ,\\ |==|,  \\/ - | ",
+            "|==|   .-. ,\\\\==\\ -    ,_ / \\==\\ -    ,_ //==/\\/ _ ||==|-   ,   / ",
+            "/==/, //=/  | '.='. -   .'   '.='. -   .' \\==\\ - , //==/ , _  .'  ",
+            "`--`-' `-`--`   `--`--''       `--`--''    `--`---' `--`..---'    ",
           }, "\n"),
         },
       },
     },
   },
 
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
+  -- 一些基础配置
   {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
+    "AstroNvim/astrocore",
+    opts = {
+      options = {
+        opt = {
+          clipboard = "unnamedplus",
+          linespace = 2,
+          iskeyword = keywords "-",
+          ignorecase = true,
+        },
+      },
+      features = {
+        large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+        highlighturl = true, -- highlight URLs at start
+        notifications = true, -- enable notifications at start
+        signature_help = false,
+      },
+    },
+  },
+
+  -- 编辑快捷键相关配置
+  {
+    "AstroNvim/astrocore",
+    opts = function(_, opts)
+      local maps = opts.mappings
+      -- 普通模式按键
+      maps.n["<C-s>"] = { "<cmd>w<cr>", desc = "保存" }
+      maps.n["<C-a>"] = { "ggVG", desc = "全选" }
+      maps.n["x"] = { '"_x', desc = "删除单个字符不剪切" }
+      maps.n["dd"] = { '"_dd', desc = "删除一行不剪切" }
+      maps.n["d"] = { '"_d', desc = "删除不剪切" }
+      maps.n["D"] = { '"_D', desc = "删除不剪切" }
+      maps.n["X"] = { '"_X', desc = "删除不剪切" }
+      maps.n["g/"] = { require("snacks.picker").grep, desc = "Snacks Grep" }
+      -- 编辑模式按键
+      maps.i["<C-h>"] = { "<Left>" }
+      maps.i["<C-l>"] = { "<Right>" }
+      maps.i["<C-z>"] = { "<cmd>undo<cr>" }
+      maps.i["<C-s>"] = { "<cmd>w<cr>", desc = "write" }
+      maps.i["<C-v>"] = { "<C-r>+" }
+      -- 选择模式Visual模式按键
+      maps.c["<C-h>"] = { "<Left>" }
+      maps.c["<C-l>"] = { "<Right>" }
+      maps.c["<C-v>"] = { "<C-r>+" }
+      maps.v["<C-c>"] = { "y" }
+      maps.v["d"] = { '"_d', desc = "删除而不剪切" }
     end,
   },
 
+  -- buffer 配置
   {
-    "windwp/nvim-autopairs",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom autopairs configuration such as custom rules
-      local npairs = require "nvim-autopairs"
-      local Rule = require "nvim-autopairs.rule"
-      local cond = require "nvim-autopairs.conds"
-      npairs.add_rules(
-        {
-          Rule("$", "$", { "tex", "latex" })
-            -- don't add a pair if the next character is %
-            :with_pair(cond.not_after_regex "%%")
-            -- don't add a pair if  the previous character is xxx
-            :with_pair(
-              cond.not_before_regex("xxx", 3)
-            )
-            -- don't move right when repeat character
-            :with_move(cond.none())
-            -- don't delete if the next character is xx
-            :with_del(cond.not_after_regex "xx")
-            -- disable adding a newline when you press <cr>
-            :with_cr(cond.none()),
-        },
-        -- disable for .vim files, but it work for another filetypes
-        Rule("a", "a", "-vim")
-      )
+    "AstroNvim/astrocore",
+    opts = function(_, opts)
+      local maps = opts.mappings
+      maps.n["<A-l>"] = {
+        function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+        desc = "Next buffer",
+      }
+      maps.n["<A-h>"] = {
+        function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+        desc = "Previous buffer",
+      }
+      maps.n["<Leader>c"] = {
+        function()
+          local bufs = vim.fn.getbufinfo { buflisted = true }
+          require("astrocore.buffer").close(0)
+          if not bufs[2] then require("snacks").dashboard() end
+        end,
+        desc = "Close buffer",
+      }
+      maps.n["<leader>bD"] = {
+        function()
+          require("astrocore.status").heirline.buffer_picker(
+            function(bufnr) require("astrocore.buffer").close(bufnr) end
+          )
+        end,
+        desc = "Pick to close",
+      }
     end,
   },
 }

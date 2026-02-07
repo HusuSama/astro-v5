@@ -39,6 +39,7 @@ return {
   { import = "astrocommunity.pack.rust" },
 
   -- editor helper
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.completion.blink-cmp" },
   -- { import = "astrocommunity.completion.blink-cmp-git" },
   { import = "astrocommunity.completion.blink-cmp-emoji" },
