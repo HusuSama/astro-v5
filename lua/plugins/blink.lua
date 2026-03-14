@@ -54,8 +54,6 @@ return {
     return require("astrocore").extend_tbl(opts, {
       ---@type blink.cmp.KeymapConfig
       keymap = {
-        -- 此处的文档翻页映射，需要开启了 signature 才能使用
-        -- 注意需要关闭 noice 的 signature 功能
         ["<C-d>"] = {
           function(cmp)
             -- if cmp.is_documentation_visible() and vim.fn.mode "i" then cmp.scroll_documentation_down(4) end

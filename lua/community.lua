@@ -28,7 +28,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
@@ -55,6 +55,7 @@ return {
   { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.completion.avante-nvim" },
+  { import = "astrocommunity.ai.opencode-nvim" },
   { import = "astrocommunity.editing-support.mcphub-nvim" },
   -- { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
