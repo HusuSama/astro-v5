@@ -46,7 +46,8 @@ return {
       preset = "super-tab",
     }
     -- require("astrocore").list_insert_unique(opts.sources.default, { "dadbod" })
-    opts.sources.default = { "lsp", "dadbod", "avante", "snippets", "path", "emoji", "lazydev" }
+    -- opts.sources.default = { "lsp", "dadbod", "avante", "snippets", "path", "emoji", "lazydev" }
+    opts.sources.default = { "lsp", "dadbod", "snippets", "path", "emoji", "lazydev" }
     -- opts.sources.default = { "lsp", "dadbod", "avante", "path", "emoji", "lazydev" }
     opts.signature = { enabled = false }
     local order_table = order_sources(opts.sources.default)
@@ -77,10 +78,10 @@ return {
         per_filetype = { sql = { "dadbod" } },
         providers = {
           dadbod = { module = "vim_dadbod_completion.blink" },
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
-          },
+          -- avante = {
+          --   module = "blink-cmp-avante",
+          --   name = "Avante",
+          -- },
         },
       },
       ---@type blink.cmp.CompletionConfig

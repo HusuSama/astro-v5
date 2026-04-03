@@ -54,7 +54,7 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
-  { import = "astrocommunity.completion.avante-nvim" },
+  -- { import = "astrocommunity.ai.avante-nvim" },
   { import = "astrocommunity.ai.opencode-nvim" },
   { import = "astrocommunity.editing-support.mcphub-nvim" },
   -- { import = "astrocommunity.editing-support.codecompanion-nvim" },
